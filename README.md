@@ -10,7 +10,9 @@ In this website we integrate two our projects, so that you can get acces to them
 
 ## Usage
 
-Getting started with Typist is easy. Simply visit the following URL to access the application: [https://kirillkagg.github.io/writing/](https://kirillkagg.github.io/writing/)
+Getting started with Typist is easy. Simply visit the following URL to access the application: 
+
+[https://kirillkagg.github.io/writing/](https://kirillkagg.github.io/writing/)
 
 ## Technologies Used
 
