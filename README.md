@@ -3,7 +3,9 @@
 Welcome to IELTS-Writing Website, here you you can find two distinct sections for practicing your writing skills: the Training Version and the Exam Simulation. Don't let the writing section hold you back - press the button below and take your writing to the next level!
 
 In this website we integrate two our projects, so that you can get acces to them very quickly!
+
 [https://kirillkagg.github.io/Typist/](https://kirillkagg.github.io/Typist/)
+
 [https://kirillkagg.github.io/IELTS-Writing/](https://kirillkagg.github.io/IELTS-Writing/)
 
 ## Usage
