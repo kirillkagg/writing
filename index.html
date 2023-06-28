@@ -63,49 +63,48 @@
          transform: scaleX(1);
          }
          @keyframes draw {
-            100% { stroke-dashoffset: 0 }
-            }
-            path {
-            animation: draw 4s ease-in-out infinite;
-            }
-            svg {
-
-            margin-bottom: 20px;
-            }
-            button {
-            font-size: 16px;
-            padding: 10px 20px;
-            background-color: #DA72B2;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.2s ease-in-out;
-            }
-            button:hover {
-            background-color: #C54C8A;
-            }
-            #cool-text {
-            display: none;
-            font-size: 24px;
-            font-weight: bold;
-            color: #DA72B2;
-            margin-top: 10px;
-            }
-            /* media queries */
-            @media only screen and (max-width: 768px) {
-            /* adjust styles for smaller screens */
-            svg {
-            margin-bottom: 10px;
-            }
-            button {
-            font-size: 14px;
-            padding: 8px 16px;
-            }
-            #cool-text {
-            font-size: 20px;
-            margin-top: 5px;
-            }
+         100% { stroke-dashoffset: 0 }
+         }
+         path {
+         animation: draw 4s ease-in-out infinite;
+         }
+         svg {
+         margin-bottom: 20px;
+         }
+         button {
+         font-size: 16px;
+         padding: 10px 20px;
+         background-color: #DA72B2;
+         color: white;
+         border: none;
+         border-radius: 5px;
+         cursor: pointer;
+         transition: background-color 0.2s ease-in-out;
+         }
+         button:hover {
+         background-color: #C54C8A;
+         }
+         #cool-text {
+         display: none;
+         font-size: 24px;
+         font-weight: bold;
+         color: #DA72B2;
+         margin-top: 10px;
+         }
+         /* media queries */
+         @media only screen and (max-width: 768px) {
+         /* adjust styles for smaller screens */
+         svg {
+         margin-bottom: 10px;
+         }
+         button {
+         font-size: 14px;
+         padding: 8px 16px;
+         }
+         #cool-text {
+         font-size: 20px;
+         margin-top: 5px;
+         }
       </style>
       <script>
          window.addEventListener('DOMContentLoaded', (event) => {
@@ -158,16 +157,15 @@
    </section>
    <section id="services" style="height: 745px; width: 100%; background-color: #fff;">
       <div style="display: flex; align-items: center; justify-content: center; height: 601px; margin: 50px 0;">
-         <a href="https://kirillkagg.github.io/Typist/">
+         <a href="https://kirillkagg.github.io/Typist/" target="_blank">
          <img src="image1.jpg" alt="Image 1" style="width: 100%; max-width: 800px; height: auto; margin-right: 10px;">
          </a>
-         <a href="https://kirillkagg.github.io/IELTS-Writing/">
+         <a href="https://kirillkagg.github.io/IELTS-Writing/" target="_blank">
          <img src="image2.jpg" alt="Image 2" style="width: 100%; max-width: 800px; height: auto; margin-left: 10px;">
          </a>
       </div>
    </section>
    <section id="contact" style="height: 345px; width: 100%; background-color: #3D6399; display: flex; justify-content: center; align-items: center;">
-
       <div>
          <button id="cool-button">Press me!</button>
          <p id="cool-text" style="display: none;"></p>
@@ -183,7 +181,7 @@
             const coolButton = document.querySelector("#cool-button");
             const coolText = document.querySelector("#cool-text");
             const coolSvg = document.querySelector("svg");
-
+            
             const texts = [
                   "You got this!",
                   "Keep going!",
@@ -246,9 +244,9 @@
                   "Stay positive!",
                   "Believe in yourself!",
                ];
-
-
-
+            
+            
+            
             coolButton.addEventListener("click", () => {
               coolButton.style.display = "none";
               coolSvg.style.display = "block";
