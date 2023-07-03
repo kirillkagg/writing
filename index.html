@@ -84,7 +84,7 @@
          transition: background-color 0.2s ease-in-out;
          }
          button:hover {
-         background-color: #C54C8A;
+         background-color: rgba(248,113,113,var(--tw-bg-opacity));
          }
          #cool-text {
          display: none;
@@ -168,94 +168,99 @@
       </div>
    </section>
    <section id="contact" style="height: 345px; width: 100%; background-color: #3D6399; display: flex; justify-content: center; align-items: center;">
-      <div>
-         <button id="cool-button">Press me!</button>
-         <p id="cool-text" style="display: none;"></p>
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" style="display: none;">
-            <defs>
-               <clipPath id="hc">
-                  <path d="M 191 207 C 162 162 112 54 51 70 C -22 121 143 314 188 356 C 234 303 400 157 352 88 C 324 54 214 171 191 207 Z " />
-               </clipPath>
-            </defs>
-            <path fill="none" stroke="#DA72B2" stroke-width="44" stroke-linecap="round" stroke-dasharray="3703" stroke-dashoffset="3703" clip-path="url(#hc)" d="M 120 0 C 88 77 -2 154 3 160 C 8 166 182 47 189 57 C 196 67 2 223 7 228 C 12 233 183 98 192 109 C 201 120 24 280 31 289 C 38 298 349 44 356 53 C 363 62 73 310 88 329 C 304 201 387 88 383 85 C 379 82 112 361 121 370 C 130 379 348 162 356 171"></path>
-         </svg>
-         <script>
-            const coolButton = document.querySelector("#cool-button");
-            const coolText = document.querySelector("#cool-text");
-            const coolSvg = document.querySelector("svg");
-            
-            const texts = [
-                  "You got this!",
-                  "Keep going!",
-                  "Stay strong!",
-                  "Believe!",
-                  "Dream big!",
-                  "Never quit!",
-                  "Stay focused!",
-                  "You can!",
-                  "Push harder!",
-                  "Be fearless!",
-                  "Stay positive!",
-                  "Embrace change!",
-                  "Rise above!",
-                  "Make it happen!",
-                  "Stay determined!",
-                  "Find your joy!",
-                  "Stay inspired!",
-                  "Shine bright!",
-                  "Never give up!",
-                  "Achieve more!",
-                  "Study hard!",
-                  "Ace it!",
-                  "Stay calm!",
-                  "Review well!",
-                  "Prepare well!",
-                  "You're ready!",
-                  "Keep calm!",
-                  "Stay confident!",
-                  "Know it all!",
-                  "Stay motivated!",
-                  "Be disciplined!",
-                  "Practice more!",
-                  "Stay organized!",
-                  "Stay committed!",
-                  "You've got it!",
-                  "Stay determined!",
-                  "Learn and grow!",
-                  "Stay dedicated!",
-                  "Master the material!",
-                  "Stay positive!",
-                  "Believe in yourself!",
-                  "Push your limits!",
-                  "Stay persistent!",
-                  "Stay resilient!",
-                  "Never give up!",
-                  "Stay unstoppable!",
-                  "Stay driven!",
-                  "Embrace challenges!",
-                  "Stay optimistic!",
-                  "Strive for success!",
-                  "Stay passionate!",
-                  "Stay inspired!",
-                  "Stay goal-oriented!",
-                  "Stay disciplined!",
-                  "Stay focused!",
-                  "Stay dedicated!",
-                  "Stay motivated!",
-                  "Stay confident!",
-                  "Stay positive!",
-                  "Believe in yourself!",
-               ];
-            
-            
-            
-            coolButton.addEventListener("click", () => {
-              coolButton.style.display = "none";
-              coolSvg.style.display = "block";
-              coolText.style.display = "block";
-              coolText.textContent = texts[Math.floor(Math.random() * texts.length)];
-            });
-         </script>
+   <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="./style.css">
+   <div class="px-4 text-grey-900">
+      <h1 class="text-orange-400 font-bold text-xl text-center mt-2 p-2">IELTS Band Score Calculator</h1>
+      <div class="rounded-lg shadow mt-2 p-4 bg-white mx-auto" style="width: 551.99px; height: 232px">
+         <div>
+            <label>Correct answers:</label>
+            <input type="number" placeholder="e.g 25" class="w-full block mt-2 bg-gray-200 p-2 rounded-lg" min="0" max="40" name="correctAnswers" id="correctAnswers" required>
+         </div>
+         <div class="flex justify-between items-center">
+            <div class="w-1/2">
+               <div class="mt-2 p-2">
+                  <label for="reading" class="mr-2"><input type="radio" name="module" id="reading" checked> Reading</label>
+                  <label for="listening" class="mr-2"><input type="radio" name="module" id="listening"> Listening</label>
+               </div>
+               <button id="btnCalculate" class="rounded px-4 py-2 hover:shadow-md active:shadow-none text-blue-100 active:outline-none focus:outline-none mt-4 bg-blue-500 shadow">
+               Calculate
+               </button>
+            </div>
+            <div class="w-1/2 flex justify-end items-center content-center p-4">
+               <div id="score" class="flex items-center justify-center rounded-full bg-red-400 w-24 text-center p-2 h-24 text-4xl text-red-200">0.0</div>
+            </div>
+         </div>
       </div>
-   </section>
+   </div>
+   <script>
+      (function() {
+      let btnCalculate = document.querySelector("#btnCalculate");
+      let score = document.getElementById("score");
+      
+      let modules = {
+      listening: {
+        "9.0": [39, 40],
+        "8.5": [37, 38],
+        "8.0": [35, 36],
+        "7.5": range(32, 34),
+        "7.0": [30, 31],
+        "6.5": range(26, 29),
+        "6.0": range(23, 25),
+        "5.5": range(18, 22),
+        "5.0": [16, 17],
+        "4.5": range(13, 15),
+        "4.0": range(10, 12),
+        "3.5": [8, 9],
+        "3.0": [6, 7],
+        "2.5": [4, 5],
+        "0.0": range(0, 4)
+      },
+      
+      reading: {
+        "9": [39, 40],
+        "8.5": [37, 38],
+        "8": [35, 36],
+        "7.5": [33, 34],
+        "7": range(30, 32),
+        "6.5": range(27, 29),
+        "6": range(23, 26),
+        "5.5": range(19, 22),
+        "5": range(15, 18),
+        "4.5": [13, 14],
+        "4": range(10, 12),
+        "3.5": [8, 9],
+        "3": [6, 7],
+        "2.5": [4, 5],
+        "0": range(0, 4)
+      }
+      };
+      
+      function calculateScore() {
+      let isReadingChecked = document.getElementById("reading").checked;
+      let selectedModule = isReadingChecked ? "reading" : "listening";
+      let module = modules[selectedModule];
+      
+      let correctAnswers = document.getElementById("correctAnswers").value;
+      for (let band in module) {
+        if (module[band].indexOf(parseInt(correctAnswers)) >= 0) {
+          score.className += " text-red-lightest";
+          score.innerText = parseFloat(band).toFixed(1);
+        }
+      }
+      }
+      
+      btnCalculate.addEventListener("click", calculateScore);
+      
+      function range(start, end) {
+      let result = [];
+      for (let i = start; i < end + 1; i++) {
+        result.push(i);
+      }
+      
+      return result;
+      }
+      })();
+   </script>
+</section>
 </html>
