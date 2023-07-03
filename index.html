@@ -234,6 +234,7 @@
         "3": [6, 7],
         "2.5": [4, 5],
         "0": range(0, 4)
+      }   
       };
       
       function calculateScore() {
@@ -247,7 +248,9 @@
           score.className += " text-red-lightest";
           score.innerText = parseFloat(band).toFixed(1);
         }
-      
+      }   
+      }
+         
       btnCalculate.addEventListener("click", calculateScore);
       
       function range(start, end) {
@@ -257,7 +260,7 @@
       }
       
       return result;
-      }
+      })();
       
    </script>
 </section>
